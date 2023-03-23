@@ -1,0 +1,23 @@
+<table>
+    <thead>
+      <tr>
+        <th>Restaurant</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Order Again</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.restaurant }}</td>
+        <td>{{ order.description }}</td>
+        <td>{{ order.rating }}</td>
+        <td *ngIf="order.orderAgain">&#x2713;</td>
+        <td><button (click)="deleteOrder(order.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <app-add-order-form (orderSave)="addOrder($event)"></app-add-order-form>
+  
