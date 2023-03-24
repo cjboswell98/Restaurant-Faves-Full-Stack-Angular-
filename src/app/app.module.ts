@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
-
+import {HttpClient, HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { AddOrderFormComponent } from './add-order-form/add-order-form.component';
@@ -10,11 +10,12 @@ import { AddOrderFormComponent } from './add-order-form/add-order-form.component
   declarations: [
     AppComponent,
     OrderHistoryComponent,
-    AddOrderFormComponent
+    AddOrderFormComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule // Add FormsModule to imports
+    FormsModule,
+    HttpClientModule, // Add FormsModule to imports
   ],
   providers: [],
   bootstrap: [AppComponent]
